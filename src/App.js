@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header>
         <div className="head">
-          <h1>Carbon Footprint Calculator</h1>
+          <div className="logo" /><h1>Carbon Footprint Calculator</h1>
           <nav />
         </div>
       </header>
