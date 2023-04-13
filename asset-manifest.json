@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carbon-footprint-calculator/static/css/main.4bedaa3c.css",
-    "main.js": "/carbon-footprint-calculator/static/js/main.3afcc695.js",
+    "main.js": "/carbon-footprint-calculator/static/js/main.f2c57a36.js",
     "static/js/787.1318c572.chunk.js": "/carbon-footprint-calculator/static/js/787.1318c572.chunk.js",
     "static/media/decision-making.png": "/carbon-footprint-calculator/static/media/decision-making.40ef2aeb5b4787743106.png",
     "static/media/sustainable.png": "/carbon-footprint-calculator/static/media/sustainable.f43d1af520fdc2602ba8.png",
@@ -11,11 +11,11 @@
     "static/media/track.png": "/carbon-footprint-calculator/static/media/track.c9512f10b339880e3957.png",
     "index.html": "/carbon-footprint-calculator/index.html",
     "main.4bedaa3c.css.map": "/carbon-footprint-calculator/static/css/main.4bedaa3c.css.map",
-    "main.3afcc695.js.map": "/carbon-footprint-calculator/static/js/main.3afcc695.js.map",
+    "main.f2c57a36.js.map": "/carbon-footprint-calculator/static/js/main.f2c57a36.js.map",
     "787.1318c572.chunk.js.map": "/carbon-footprint-calculator/static/js/787.1318c572.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4bedaa3c.css",
-    "static/js/main.3afcc695.js"
+    "static/js/main.f2c57a36.js"
   ]
 }
