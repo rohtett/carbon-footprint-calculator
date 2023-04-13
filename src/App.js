@@ -1,6 +1,6 @@
 import './App.scss';
-import Home from './Home/home'
-import SignUp from './Signup/signup'
+import Home from './Pages/home'
+import SignUp from './Pages/signup'
 import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
