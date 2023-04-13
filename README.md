@@ -1,3 +1,25 @@
+# Considerations for development
+
+1. Calculation Methodology: Explain how you calculate the carbon footprint for each type of travel. This could include the formula used, the data sources, and any assumptions made.
+
+2. Input Requirements: Describe the information needed from the user to calculate the carbon footprint. This could include the type of travel (car, bus, train, plane, etc.), the distance traveled, the fuel efficiency of the mode of transport, and the number of passengers.
+
+3. Emission Factors: Provide emission factors for different modes of transportation. These are estimates of how much CO2 is produced per unit of distance traveled or per passenger-mile. You can get these emission factors from government sources, academic studies, or international organizations.
+
+4. Global Warming Potential: Explain the concept of global warming potential (GWP) and how it is used to compare the relative impact of different greenhouse gases. This can help users understand why carbon emissions are being used as a measure of environmental impact.
+
+5. Carbon Offsetting: Educate users on carbon offsetting and how it works. This could include a brief explanation of what carbon offsetting is, how it works, and some of the limitations and criticisms of the practice.
+
+6. Tips for Reducing Carbon Footprint: Provide users with practical tips for reducing their carbon footprint when traveling. This could include suggestions for carpooling, taking public transportation, choosing more fuel-efficient modes of travel, and offsetting carbon emissions.
+
+7. Login and save previous journeys which a user may have taken.
+
+8. Privacy and Data Security: Explain how you will protect user data, including any personally identifiable information that is collected. Provide details on how the data will be stored, who will have access to it, and how it will be used.
+
+9. Support and Feedback: Provide users with information on how they can contact you for support or to provide feedback. This could include an email address, a phone number, or a support forum.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,43 +50,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

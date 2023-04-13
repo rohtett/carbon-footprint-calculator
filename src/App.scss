@@ -1,0 +1,124 @@
+.App {
+  width: 100vw;
+  & header {
+    height: 90px;
+    border-bottom: 1px solid black;
+    position: sticky;
+    background-color: white;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    & .head {
+      max-width: 1136px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  & .container {
+    max-width: 1136px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    & .board {
+      width: 100%;
+      &__item {
+        //padding: 20px;
+        display: flex;
+        align-items: center;
+        &--raise-awareness,
+        &--informed-decisions,
+        &--compare-footprints {
+          &:hover {
+            & .board__item__icon {
+              transform: scaleX(-1);
+              top: -10px;
+              transition: top 0.4s, transform 0.4s;
+            }
+          }
+        }
+        &--track-progress {
+          &:hover {
+            & .board__item__icon {
+              transform: rotate(360deg);
+              top: -10px;
+              transition: top 0.4s, transform 0.4s;
+            }
+          }
+        }
+        &--take-action,
+        &--environmental-contribution {
+          &:hover {
+            & .board__item__icon {
+              top: -10px;
+              transition: top 0.4s;
+            }
+          }
+        }
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+          justify-self: flex-end;
+        }
+        & > div {
+          width: 180px;
+        }
+        & > p {
+          max-width: 400px;
+          //padding: 20px;
+        }
+        &__icon {
+          transform: none;
+          position: relative;
+          top: 0px;
+          transition: top 0.4s, transform 0.4s;
+          margin-left: auto;
+          margin-right: auto;
+          height: 100px;
+          width: 100px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &__title {
+          margin-top: 0;
+          cursor: default;
+          text-align: center;
+        }
+        &--raise-awareness {
+          &__icon {
+            background-image: url("Media/self-awareness.png");
+          }
+        }
+        &--informed-decisions {
+          &__icon {
+            background-image: url("Media/decision-making.png");
+          }
+        }
+        &--track-progress {
+          &__icon {
+            background-image: url("Media/track.png");
+          }
+        }
+        &--compare-footprints {
+          &__icon {
+            background-image: url("Media/benchmarking.png");
+          }
+        }
+        &--take-action {
+          &__icon {
+            background-image: url("Media/actionable.png");
+          }
+        }
+        &--environmental-contribution {
+          &__icon {
+            background-image: url("Media/sustainable.png");
+          }
+        }
+      }
+    }
+    & .separator {
+      background-color: grey;
+      width: 736px;
+      height: 100%;
+    }
+  }
+}
