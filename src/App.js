@@ -13,8 +13,8 @@ function App() {
         </div>
       </header>
       <Routes>
-        <Route path = "carbon-footprint-calculator/" element= { <Home /> } />
-        <Route path = "carbon-footprint-calculator/signup" element= { <SignUp /> } />
+        <Route path = "/carbon-footprint-calculator/" element= { <Home /> } />
+        <Route path = "/carbon-footprint-calculator/signup" element= { <SignUp /> } />
       </Routes>
     </div>
   );
