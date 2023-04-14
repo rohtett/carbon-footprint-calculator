@@ -1,10 +1,26 @@
 @mixin breakpoint1 {
-  @media screen and (max-width: 474px) {
+  @media screen and (max-width: 484px) {
+    @content;
+  }
+}
+@mixin breakpoint2 {
+  @media screen and (max-width: 936px) {
+    @content;
+  }
+}
+@mixin breakpoint3 {
+  @media screen and (max-width: 1055px) {
+    @content;
+  }
+}
+@mixin breakpoint4 {
+  @media screen and (max-width: 645px) {
     @content;
   }
 }
 
 .App {
+  overflow-x: hidden;
   background-color: #69be94;
   width: 100%;
   & header {
@@ -17,20 +33,37 @@
     z-index: 1;
     & .head {
       display: flex;
+      justify-content: space-between;
       max-width: 1136px;
       margin-left: auto;
       margin-right: auto;
-      & .logo {
-        height: 80px;
-        width: 80px;
-        background-image: url("../public/logo.svg");
-        background-position: center;
-        background-size: 120px 120px;
+      & > a {
+        text-decoration: none;
+        display: flex;
+        & .logo {
+          height: 80px;
+          width: 80px;
+          background-image: url("../public/logo.svg");
+          background-position: center;
+          background-size: 120px 120px;
+        }
+        & h1 {
+          color: #40576d;
+          padding-left: 20px;
+          @include breakpoint1 {
+            margin: 0;
+            max-width: 250px;
+          }
+        }
       }
-      & h1 {
-        padding-left: 20px;
+      & nav {
+        display: flex;
+        align-items: center;
       }
     }
+  }
+  & .wrapper {
+    width: 100%;
   }
   & .container {
     max-width: 1136px;
@@ -40,11 +73,15 @@
     & .banner {
       background-color: white;
       & .board {
-        max-width: 440px;
+        justify-content: space-around;
         color: black;
         display: flex;
         flex-wrap: wrap;
+        @include breakpoint4 {
+          width: 120px;
+        }
         &__item {
+          box-sizing: border-box;
           width: 180px;
           color: #69be94;
           padding: 20px;
@@ -59,6 +96,9 @@
             }
           }
           &--track-progress {
+            &__icon {
+              background-size: 120px 120px!important;
+            }
             &:hover {
               & .board__item__icon {
                 transform: rotate(360deg);
@@ -75,6 +115,9 @@
               }
             }
           }
+          @include breakpoint3 {
+            width: 120px;
+          }
           &__icon {
             transform: none;
             position: relative;
@@ -88,13 +131,19 @@
             background-repeat: no-repeat;
             background-position: center;
             filter: invert(91%) sepia(5%) saturate(3522%) hue-rotate(85deg) brightness(85%) contrast(71%);
+            @include breakpoint3 {
+              width: 80px;
+            }
           }
           &__title {
+            width: 100%;
             margin-top: 0;
             cursor: default;
             text-align: center;
-            color: black;
-            filter: invert(91%) sepia(5%) saturate(3522%) hue-rotate(85deg) brightness(85%) contrast(71%);
+            color: #40576d;
+            @include breakpoint3 {
+              font-size: 1em;
+            }
           }
           &--raise-awareness {
             &__icon {
@@ -132,38 +181,114 @@
     & .separator {
       background-color: #69be94;
       max-width: 696px;
-      min-width: 400px;
       & .facts {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         color: #40576d;
+        @include breakpoint2 {
+          display: block;
+        }
         &__item {
           text-align: center;
           max-width: 40%;
           padding: 20px;
+          @include breakpoint2 {
+            padding-top: 0;
+            padding-bottom: 0;
+            max-width: 100%;
+          }
         }
       }
-      & .navigators {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        &__link {
+      & .calculator__links {
+        padding: 20px;
+        &--title {
+          margin: 0;
+          padding-left: 50px;
+          padding-right: 50px;
           color: #40576d;
-          margin: 5px;
-          width: 50%;
-          padding: 10px;
-          text-align: center;
-          border-radius: 10px;
-          width: 100px;
-          background-color: white;
-          transition: background-color 0.4s, color 0.4s;
-          &:hover {
-            cursor: pointer;
-            background-color: #40576d;;
-            color: white;
-            transition: background-color 0.4s, color 0.4s;
+        }
+      }
+    }
+  }
+  footer {
+    border-top: 1px solid black;
+    width: 100%;
+    background-color: white;
+    & .foot {
+      max-width: 1136px;
+      font-size: 0.7em;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 20px;
+      &__section {
+        &__title {
+          color: #40576d;
+          margin: 0;
+          padding: 20px;
+        }
+        &__content {
+          max-width: 300px;
+          display: flex;
+          flex-wrap: wrap;
+          &__link {
+            height: 30px;
+            flex: 1 1 100px;
+            margin: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            & a {
+              color: #40576d;
+              text-decoration: none!important;
+              &:hover {
+                color: #69be94;
+              }
+            }
           }
+        }
+      }
+    }
+  }
+  .navigators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__link {
+      margin: 5px;
+      width: 50%;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+      width: 100px;
+      transition: background-color 0.4s, color 0.4s;
+      &:hover {
+        cursor: pointer;
+        transition: background-color 0.4s, color 0.4s;
+      }
+      &--white {
+        background-color: white;
+        color: #40576d;
+        border: 1px solid #40576d;
+        &:hover {
+          background-color: #40576d;
+          color: white;
+        }
+      }
+      &--green {
+        background-color: #69be94;
+        color: white;
+        border: 1px solid #40576d;
+        &:hover {
+          background-color: #40576d;
+          color: white;
+        }
+      }
+      & a {
+        color: #40576d;
+        text-decoration: none!important;
+        &:hover {
+          color: #69be94;
         }
       }
     }
