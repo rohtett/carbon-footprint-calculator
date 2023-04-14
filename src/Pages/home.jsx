@@ -36,19 +36,22 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="">
-          <h2>Get started today</h2>
+        <div className="calculator__links">
+          <div className="calculator__links--title">
+            <h2>Get started today</h2>
+            <p>Choose your calculator</p>
+          </div>
           <div className="navigators">
-            <div className="navigators__link navigators__link--car">
+            <div className="navigators__link navigators__link--white">
               Car
             </div>
-            <div className="navigators__link navigators__link--bus">
+            <div className="navigators__link navigators__link--white">
               Bus
             </div>
-            <div className="navigators__link navigators__link--train">
+            <div className="navigators__link navigators__link--white">
               Train
             </div>
-            <div className="navigators__link navigators__link--plane">
+            <div className="navigators__link navigators__link--white">
               Plane
             </div>
           </div>
