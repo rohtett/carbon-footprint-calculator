@@ -9,12 +9,14 @@ function App() {
     <div className="App">
       <header>
         <div className="head">
-          <div>
-            <div className="logo" /><h1>Carbon Compass</h1>
-          </div>
+          <Link to="/carbon-footprint-calculator">
+              <div className="logo" /><h1>Carbon Compass</h1>
+          </Link>
           <nav>
             <div className="navigators__link navigators__link--green">
-              Sign Up
+              <Link to="carbon-foot-print-calculator/signup/">
+                Sign Up
+              </Link>
             </div>
           </nav>
         </div>
