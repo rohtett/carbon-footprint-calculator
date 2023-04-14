@@ -169,3 +169,87 @@
     }
   }
 }
+
+// Login Styling -- ends line 213
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+  }
+
+  &__button {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0077B5;
+    }
+  }
+
+  &--error {
+    color: red;
+    margin-top: 0.5rem;
+  }
+}
+// Login Styling Ended
+
+// Signup Styling -- ends line 255
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+  }
+
+  &__button {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0077B5;
+    }
+  }
+
+  &--error {
+    color: red;
+    margin-top: 0.5rem;
+  }
+}
+// Signup Styling Ended
