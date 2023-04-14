@@ -15,7 +15,7 @@ function App() {
           </Link>
           <nav>
             <div className="navigators__link navigators__link--green">
-              <Link to="carbon-foot-print-calculator/signup/">
+              <Link to="carbon-footprint-calculator/signup/">
                 Sign Up
               </Link>
             </div>
