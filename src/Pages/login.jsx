@@ -9,7 +9,7 @@ const login = () => {
         <form className="login__form">
         <div className="login__form__item">
           <input className="login__form__item--input"
-            type="email" name="email" id="email"
+            type="email" name="email" id="email" autoComplete="username"
             onChange={(e) => {
               if (e.target.value) {
                 e.target.classList.add("login__form__item--input--contains");
@@ -21,7 +21,7 @@ const login = () => {
         </div>
         <div className="login__form__item">
           <input className="login__form__item--input"
-            type="password" name="password" id="password"
+            type="password" name="password" id="password" autoComplete="current-password"
             onChange={(e) => {
               if (e.target.value) {
                 e.target.classList.add("login__form__item--input--contains");

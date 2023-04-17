@@ -48,8 +48,8 @@ const Signup = () => {
                   } else {
                     e.target.classList.remove("signup__form__item--input--contains")
                   }
-                }} 
-                />     
+                }}
+                />
             <label
               className="signup__form__item--label"
               htmlFor="name"
@@ -71,7 +71,7 @@ const Signup = () => {
                         } else {
                         e.target.classList.remove("signup__form__item--input--contains")
                         }
-                    }} 
+                    }}
 
             />
             <label
@@ -119,7 +119,7 @@ const Signup = () => {
                         } else {
                           e.target.classList.remove("signup__form__item--input--contains")
                         }
-                    }} 
+                    }}
 
             />
             <label
@@ -135,6 +135,11 @@ const Signup = () => {
           >
             Sign Up
           </button>
+          <div className="oAuth">
+            <h3>Sign In With</h3>
+            <div className=" oAuth__button oAuth__button--google" />
+            <div className="oAuth__button oAuth__button--microsoft" />
+          </div>
         </form>
       </div>
     </div>

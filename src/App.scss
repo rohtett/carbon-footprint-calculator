@@ -20,6 +20,18 @@
     @content;
   }
 }
+@keyframes bounceUp {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  75% {
+    transform: translateY(-1px);
+  }
+}
+
 
 .App {
   font-family: 'Cairo', sans-serif;
@@ -98,7 +110,10 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    min-height: 100vh;
     & .banner {
+      display: flex;
+      align-items: center;
       background-color: white;
       & .signup__form,
       .login__form {
@@ -118,11 +133,10 @@
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
-            border: 1px solid transparent;
-            transition: border 0.4s;
+            transform: none;
             &:hover {
-              border: 1px solid #4285F4;
-              transition: border 0.4s;
+              transition: transform 0.4s;
+              animation: bounceUp 0.4s normal;
             }
             &--google {
               background-image: url("/Media/google-dark.svg");
