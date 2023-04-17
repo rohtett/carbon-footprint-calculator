@@ -56,7 +56,7 @@ const signup = () => {
               }}/>
             <label className="signup__form__item--label" htmlFor="confirm-password">Confirm Password</label>
           </div>
-          <button className="signup__form__button navigators__link--white" type="submit">Sign Up</button>
+          <button className="signup__form__button" type="submit">Sign Up</button>
         </form>
       </div>
     </div>
