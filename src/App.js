@@ -14,10 +14,13 @@ function App() {
               <div className="logo" /><h1>Carbon Compass</h1>
           </Link>
           <nav>
-            <div className="navigators__link navigators__link--green">
-              <Link to="carbon-footprint-calculator/signup/">
-                Sign Up
-              </Link>
+            <div className="signin">
+              <Link to="carbon-footprint-calculator/login"> Log in </Link>
+              <div className="navigators__link navigators__link--green">
+                <Link to="carbon-footprint-calculator/signup/">
+                  Sign Up
+                </Link>
+              </div>
             </div>
           </nav>
         </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
 @mixin header-collapse {
   @media screen and (max-width: 484px) {
     @content;
@@ -20,9 +22,14 @@
 }
 
 .App {
+  font-family: 'Cairo', sans-serif;
   overflow-x: hidden;
   background-color: #69be94;
   width: 100%;
+  & button, input {
+    font-family: 'Cairo', sans-serif!important;
+    font-size: 16px;
+  }
   & header {
     height: 90px;
     border-bottom: 1px solid black;
@@ -52,6 +59,7 @@
           padding-left: 20px;
           display: flex;
           align-items: center;
+          margin: 0;
           @include header-collapse {
             padding-left: 10px;
             font-size: 1.5em;
@@ -63,7 +71,22 @@
       & nav {
         display: flex;
         align-items: center;
-
+        & .signin {
+          display: flex;
+          align-items: center;
+          & a {
+            transition: color 0.4s;
+            color: #40576d;
+            text-decoration: none;
+            padding: 10px;
+            &:hover {
+              color: #69be94;
+            }
+          }
+          div {
+            padding: 5px 10px;
+          }
+        }
       }
     }
   }
@@ -77,7 +100,39 @@
     display: flex;
     & .banner {
       background-color: white;
-      & .signup__form {
+      & .signup__form,
+      .login__form {
+        & .oAuth {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          & h3 {
+            cursor: default;
+            padding: 0 20px;
+          }
+          &__button {
+            height: 40px;
+            width: 40px;
+            background-size: contain;
+            margin: 0 5px;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: border 0.4s;
+            &:hover {
+              border: 1px solid #4285F4;
+              transition: border 0.4s;
+            }
+            &--google {
+              background-image: url("/Media/google-dark.svg");
+            }
+            &--microsoft {
+              background-image: url("/Media/ms.svg");
+              background-size: 37.5px;
+            }
+          }
+        }
         min-width: 440px;
         padding: 40px;
         box-sizing: border-box;
@@ -90,7 +145,7 @@
             height: 32px;
             display: flex;
             flex-direction: column-reverse;
-            background-color: #69be94;
+            background-color: none;
             justify-content: flex-start;
             padding: 5px;
             &--input {
@@ -98,7 +153,6 @@
               outline: none;
               border: none;
               height: 20px;
-              background-color: #69be94;
               &--contains {
                 &+ label {
                   cursor: default!important;
@@ -112,17 +166,24 @@
             &--label {
               cursor: text;
               position: absolute;
-              top: 15px;
+              top: 12px;
               left: 10px;
               transition: top 0.4s, left 0.4s, font-size 0.4s;
               color: #40576d;
             }
           }
           &__button {
+            outline: none;
+            border: 1px solid black;
             margin-top: 30px!important;
             cursor: pointer;
-            height: 50px;
+            height: 44px;
             border-radius: 5px;
+            transition: background-color 0.4s;
+            &:hover {
+              transition: background-color 0.4s;
+              background-color: #69be94;
+            }
           }
           & > * {
             margin: 10px 20px;
@@ -239,8 +300,9 @@
       max-width: 696px;
       &.backdrop {
         width: 696px;
-        background-image: url("Media/backdrop.eps");
-        background-size: contain;
+        background-image: url("Media/backdrop.png");
+        background-size: 60%;
+        opacity: 35%;
         background-repeat: no-repeat;
         background-position: center;
       }

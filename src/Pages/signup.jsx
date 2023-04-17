@@ -130,7 +130,7 @@ const Signup = () => {
             </label>
           </div>
           <button
-            className="signup__form__button navigators__link--white"
+            className="signup__form__button"
             type="submit"
           >
             Sign Up
