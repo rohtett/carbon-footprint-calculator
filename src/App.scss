@@ -1,4 +1,4 @@
-@mixin breakpoint1 {
+@mixin header-collapse {
   @media screen and (max-width: 484px) {
     @content;
   }
@@ -50,7 +50,11 @@
         & h1 {
           color: #40576d;
           padding-left: 20px;
-          @include breakpoint1 {
+          display: flex;
+          align-items: center;
+          @include header-collapse {
+            padding-left: 10px;
+            font-size: 1.5em;
             margin: 0;
             max-width: 250px;
           }
@@ -59,6 +63,7 @@
       & nav {
         display: flex;
         align-items: center;
+
       }
     }
   }
@@ -72,6 +77,57 @@
     display: flex;
     & .banner {
       background-color: white;
+      & .signup__form {
+        min-width: 440px;
+        padding: 40px;
+        box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          &__item {
+            border: 1px solid #40576d;
+            position: relative;
+            border-radius: 5px;
+            height: 32px;
+            display: flex;
+            flex-direction: column-reverse;
+            background-color: #69be94;
+            justify-content: flex-start;
+            padding: 5px;
+            &--input {
+              padding: 0px 6px;
+              outline: none;
+              border: none;
+              height: 20px;
+              background-color: #69be94;
+              &--contains {
+                &+ label {
+                  cursor: default!important;
+                  top: 2px;
+                  left: 5;
+                  font-size: 0.7em;
+                  cursor: text;
+                }
+              }
+            }
+            &--label {
+              cursor: text;
+              position: absolute;
+              top: 15px;
+              left: 10px;
+              transition: top 0.4s, left 0.4s, font-size 0.4s;
+              color: #40576d;
+            }
+          }
+          &__button {
+            margin-top: 30px!important;
+            cursor: pointer;
+            height: 50px;
+            border-radius: 5px;
+          }
+          & > * {
+            margin: 10px 20px;
+          }
+        }
       & .board {
         justify-content: space-around;
         color: black;
@@ -181,6 +237,13 @@
     & .separator {
       background-color: #69be94;
       max-width: 696px;
+      &.backdrop {
+        width: 696px;
+        background-image: url("Media/backdrop.eps");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
       & .facts {
         display: flex;
         flex-wrap: wrap;
