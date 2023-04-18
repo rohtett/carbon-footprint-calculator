@@ -55,6 +55,20 @@ function App() {
       <footer>
         <div className ="foot">
           <div className="foot__section">
+            <h2 className="foot__section__title">Menu</h2>
+            <div className="foot__section__content">
+              <p className="foot__section__content__link">
+                <Link to="/footprint-calculator/calculate">Calculate</Link>
+              </p>
+              <p className="foot__section__content__link">
+                <Link to="/footprint-calculator/my-journey">My Journey</Link>
+              </p>
+              <p className="foot__section__content__link">
+                <Link to="/footprint-calculator/leagues">Leagues</Link>
+              </p>
+            </div>
+          </div>
+          <div className="foot__section">
             <h2 className="foot__section__title">The Team</h2>
             <div className="foot__section__content">
               <p className="foot__section__content__link">
