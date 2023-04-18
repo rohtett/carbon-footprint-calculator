@@ -28,7 +28,6 @@ const Login = () => {
     }
   }
 
-const Login = () => {
   return (
     <div className="container">
       <div className="separator backdrop" />
@@ -71,6 +70,6 @@ const Login = () => {
     </div>
   );
 };
-}
+
 
 export default Login;
