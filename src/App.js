@@ -27,6 +27,10 @@ function App() {
                 </div>
               </div>
               <div className="desktop__signed">
+                //
+                // signed in menu stuff goes there
+                // for desktop view
+                //
               </div>
             </div>
             <div className="hamburger">
@@ -37,6 +41,10 @@ function App() {
                 <div className="hamburger--menu__signin">
                 </div>
                 <div className="hamburger--menu__signed">
+                //
+                // signed in menu stuff goes there
+                // for hamburger menu
+                //
                 </div>
               </div>
             </div>
