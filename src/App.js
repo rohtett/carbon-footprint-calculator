@@ -1,12 +1,12 @@
 import './App.scss';
-import { Home, Login, Signup, Error } from './Pages';
+import { Home, Login, Signup, Error, GeoCalculator } from './Pages';
 import { HiBars3CenterLeft } from 'react-icons/hi2';
 import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
 
   const isLoggedIn =()=>{
-    const user = JSON.parse(localStorage.getItem('user')); // cecking if user is logged in in the local storage as their user object is stored there
+    const user = JSON.parse(localStorage.getItem('user')); // checking if user is logged in in the local storage as their user object is stored there
     return user !== null && user !== undefined; //checking for null and undefined which will return true if user is logged in.
   }
   return (
@@ -27,10 +27,6 @@ function App() {
                 </div>
               </div>
               <div className="desktop__signed">
-                //
-                // signed in menu stuff goes there
-                // for desktop view
-                //
               </div>
             </div>
             <div className="hamburger">
@@ -41,10 +37,6 @@ function App() {
                 <div className="hamburger--menu__signin">
                 </div>
                 <div className="hamburger--menu__signed">
-                //
-                // signed in menu stuff goes there
-                // for hamburger menu
-                //
                 </div>
               </div>
             </div>
@@ -56,6 +48,7 @@ function App() {
         <Route path = "/carbon-footprint-calculator/" element= { <Home /> } key = { document.location.href } />
         <Route path = "/carbon-footprint-calculator/signup" element= { <Signup /> } key = { document.location.href } />
         <Route path = "/carbon-footprint-calculator/login" element= { <Login /> } key = { document.location.href } />
+        <Route path = "/carbon-footprint-calculator/geocalculator" element= { <GeoCalculator /> } key = { document.location.href } />
         <Route path = "*" element= { <Error /> } key = { document.location.href } />
       </Routes>
       </div>
