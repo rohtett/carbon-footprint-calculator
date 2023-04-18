@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.scss';
 
-const login = () => {
+const Login = () => {
   return (
     <div className="container">
       <div className="separator backdrop" />
@@ -43,4 +43,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

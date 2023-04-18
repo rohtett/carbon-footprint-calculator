@@ -1,8 +1,6 @@
 import './App.scss';
-import Home from './Pages/home'
-import SignUp from './Pages/signup'
-import Login from './Pages/login';
-import Error from './Pages/404'
+import { Home, Login, Signup, Error } from './Pages';
+import { HiBars3CenterLeft } from 'react-icons/hi2';
 import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
@@ -14,12 +12,27 @@ function App() {
               <div className="logo" /><h1>Carbon Compass</h1>
           </Link>
           <nav>
-            <div className="signin">
-              <Link to="carbon-footprint-calculator/login"> Log in </Link>
-              <div className="navigators__link navigators__link--green">
-                <Link to="carbon-footprint-calculator/signup/">
-                  Sign Up
-                </Link>
+            <div className="desktop">
+              <div className="desktop__signin">
+                <Link to="carbon-footprint-calculator/login"> Log in </Link>
+                <div className="navigators__link navigators__link--green">
+                  <Link to="carbon-footprint-calculator/signup/">
+                    Sign Up
+                  </Link>
+                </div>
+              </div>
+              <div className="desktop__signed">
+              </div>
+            </div>
+            <div className="hamburger">
+              <div className="hamburger--icon">
+                <HiBars3CenterLeft />
+              </div>
+              <div className="hamburger--menu">
+                <div className="hamburger--menu__signin">
+                </div>
+                <div className="hamburger--menu__signed">
+                </div>
               </div>
             </div>
           </nav>
@@ -28,7 +41,7 @@ function App() {
       <div className="wrapper">
         <Routes>
         <Route path = "/carbon-footprint-calculator/" element= { <Home /> } key = { document.location.href } />
-        <Route path = "/carbon-footprint-calculator/signup" element= { <SignUp /> } key = { document.location.href } />
+        <Route path = "/carbon-footprint-calculator/signup" element= { <Signup /> } key = { document.location.href } />
         <Route path = "/carbon-footprint-calculator/login" element= { <Login /> } key = { document.location.href } />
         <Route path = "*" element= { <Error /> } key = { document.location.href } />
       </Routes>
@@ -50,22 +63,22 @@ function App() {
             <h2 className="foot__section__title" >Icons</h2>
             <div className="foot__section__content">
               <p className="foot__section__content__link">
-                <a href="https://www.flaticon.com/free-icons/sustainable" target="_blank" title="sustainable icons">Sustainable</a>
+                <a href="https://www.flaticon.com/free-icon/sustainable_2942555" target="_blank" title="sustainable icons">Sustainable</a>
               </p>
               <p className="foot__section__content__link">
-                <a href="https://www.flaticon.com/free-icons/knowledge" target="_blank" title="knowledge icons">Knowledge</a>
+                <a href="https://www.flaticon.com/free-icon/self-awareness_3062213" target="_blank" title="knowledge icon">Knowledge</a>
               </p>
               <p className="foot__section__content__link">
-                <a href="https://www.flaticon.com/free-icons/compare" target="_blank" title="compare icons">Compare Icon</a>
+                <a href="https://www.flaticon.com/free-icon/benchmarking_8439085" target="_blank" title="compare icon">Compare Icon</a>
               </p>
               <p className="foot__section__content__link">
-                <a href="https://www.flaticon.com/free-icons/actionable" target="_blank" title="actionable icons">Actionable</a>
+                <a href="https://www.flaticon.com/free-icon/actionable_9422976" target="_blank" title="actionable icon">Actionable</a>
               </p>
               <p className="foot__section__content__link">
-                <a href="https://www.flaticon.com/free-icons/business-and-finance" target="_blank" title="business and finance icons">Business and Finance</a>
+                <a href="https://www.flaticon.com/free-icon/track_7958863" target="_blank" title="track icon">Business and Finance</a>
               </p>
               <p className="foot__section__content__link">
-                <a href="https://www.flaticon.com/free-icons/decision-making" target="_blank" title="decision making icons">Decision Making</a>
+                <a href="https://www.flaticon.com/free-icon/decision-making_1404758" target="_blank" title="decision making icon">Decision Making</a>
               </p>
             </div>
           </div>
