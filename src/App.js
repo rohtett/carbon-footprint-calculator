@@ -4,6 +4,11 @@ import { HiBars3CenterLeft } from 'react-icons/hi2';
 import { Route, Routes, Link } from 'react-router-dom';
 
 function App() {
+
+  const isLoggedIn =()=>{
+    const user = JSON.parse(localStorage.getItem('user')); // cecking if user is logged in in the local storage as their user object is stored there
+    return user !== null && user !== undefined; //checking for null and undefined which will return true if user is logged in.
+  }
   return (
     <div className="App">
       <header>
