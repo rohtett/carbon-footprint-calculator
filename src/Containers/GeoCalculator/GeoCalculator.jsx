@@ -20,12 +20,11 @@ function GeoCalculator() {
   return (
     <div className='container'>
       <div className='separator'>
-        <h1>Geo Calculator</h1>
-      </div>
-      <div className="calculators">
-        { calculator === 'car' && <CalculatorCar /> }
-        { calculator === 'public' && <CalculatorPublic /> }
-        { calculator === 'plane' && <CalculatorPlane /> }
+        <div className="calculators">
+          { calculator === 'car' && <CalculatorCar /> }
+          { calculator === 'public' && <CalculatorPublic /> }
+          { calculator === 'plane' && <CalculatorPlane /> }
+        </div>
       </div>
       <div className='banner'>
         <div className="calculators--menu">
