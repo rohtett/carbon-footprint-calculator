@@ -1,38 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
 
-@mixin header-collapse {
-  @media screen and (max-width: 484px) {
-    @content;
-  }
-}
-@mixin facts-collapse {
-  @media screen and (max-width: 936px) {
-    @content;
-  }
-}
-@mixin badge-collapse {
-  @media screen and (max-width: 1055px) {
-    @content;
-  }
-}
-@mixin badge-collapse-2 {
-  @media screen and (max-width: 645px) {
-    @content;
-  }
-}
-
-@mixin nav-collapse {
-  @media screen and (max-width: 525px) {
-    @content;
-  }
-}
-
-@mixin u-300 {
-  @media screen and (max-width: 320px) {
-    @content;
-  }
-}
-
 @keyframes bounceUp {
   0%,100% {
     transform: translateY(0px);
@@ -45,9 +12,9 @@
   }
 }
 
-
 .App {
   font-family: 'Cairo', sans-serif;
+  color: #40576d;
   overflow-x: hidden;
   background-color: #69be94;
   width: 100%;
@@ -55,98 +22,9 @@
     font-family: 'Cairo', sans-serif!important;
     font-size: 16px;
   }
-  & header {
-    height: 90px;
-    border-bottom: 1px solid black;
-    position: sticky;
-    background-color: white;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    & .head {
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      max-width: 1136px;
-      margin-left: auto;
-      margin-right: auto;
-      & > a {
-        text-decoration: none;
-        display: flex;
-        & .logo {
-          height: 90px;
-          width: 90px;
-          background-image: url("../public/logo.svg");
-          background-position: center;
-          background-size: 100px 100px;
-        }
-        & h1 {
-          color: #40576d;
-          display: flex;
-          align-items: center;
-          margin: 0;
-          @include header-collapse {
-            padding-left: 10px;
-            font-size: 1.5em;
-            margin: 0;
-            max-width: 250px;
-          }
-        }
-      }
-      & nav {
-        display: flex;
-        align-items: center;
-        & .desktop {
-          &__signin {
-            display: flex;
-            align-items: center;
-            @include nav-collapse {
-              display: none!important;
-            }
-            & a {
-              transition: color 0.4s;
-              color: #40576d;
-              text-decoration: none;
-              padding: 10px;
-              &:hover {
-                color: #69be94;
-              }
-            }
-            div {
-              padding: 5px 10px;
-            }
-          }
-          &__signed {
-
-          }
-        }
-        & .hamburger {
-          display: none;
-          @include nav-collapse {
-            display: flex;
-            &--icon {
-              display: flex;
-              align-items: center;
-              transform: scaleX(-100%);
-              cursor: pointer;
-              padding: 10px;
-              & svg {
-                height: 45px;
-                width: 45px;
-              }
-            }
-            &--menu {
-              &__signin {
-
-              }
-              &__signed {
-
-              }
-            }
-          }
-        }
-      }
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
   }
   & .wrapper {
     width: 100%;
@@ -157,209 +35,15 @@
     margin-right: auto;
     display: flex;
     min-height: 100vh;
+
     & .banner {
       max-width: 360px;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: white;
-      & .signup__form,
-      .login__form {
-        width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-        @include u-300 {
-          padding: 20px;
-        }
-        & .oAuth {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          & h3 {
-            cursor: default;
-            padding: 0 20px;
-            min-width: 140px;
-            @include header-collapse {
-              padding: 0;
-            }
-          }
-          &__button {
-            min-height: 40px;
-            min-width: 40px;
-            background-size: contain;
-            margin: 0 5px;
-            background-repeat: no-repeat;
-            background-position: center;
-            cursor: pointer;
-            transform: none;
-            &:hover {
-              transition: transform 0.4s;
-              animation: bounceUp 0.4s normal;
-            }
-            &--google {
-              background-image: url("/Media/google-dark.svg");
-            }
-            &--microsoft {
-              background-image: url("/Media/ms.svg");
-              background-size: 37.5px;
-            }
-          }
-        }
-          &__item {
-            border: 1px solid #40576d;
-            position: relative;
-            border-radius: 5px;
-            height: 32px;
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: flex-start;
-            margin: 10px;
-            padding: 5px;
-            &--input {
-              padding: 0px 6px;
-              outline: none;
-              border: none;
-              height: 20px;
-              &--contains {
-                &+ label {
-                  cursor: default!important;
-                  top: 2px;
-                  left: 5;
-                  font-size: 0.7em;
-                  cursor: text;
-                }
-              }
-            }
-            &--label {
-              cursor: text;
-              position: absolute;
-              top: 12px;
-              left: 10px;
-              transition: top 0.4s, left 0.4s, font-size 0.4s;
-              color: #40576d;
-            }
-          }
-          &__button {
-            outline: none;
-            border: 1px solid black;
-            margin: 30px 10px 0 10px;
-            cursor: pointer;
-            height: 44px;
-            border-radius: 5px;
-            transition: background-color 0.4s;
-            &:hover {
-              transition: background-color 0.4s;
-              background-color: #69be94;
-            }
-          }
-        }
-      & .board {
-        height: 100%;
-        color: black;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        @include badge-collapse-2 {
-          width: 120px;
-        }
-        &__item {
-          box-sizing: border-box;
-          width: 180px;
-          color: #69be94;
-          padding: 20px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 120px;
-          flex: 1 1 120px;
-          &--raise-awareness,
-          &--informed-decisions,
-          &--compare-footprints {
-            &:hover {
-              & .board__item__icon {
-                transform: scaleX(-1);
-                transition: top 0.4s, transform 0.4s;
-              }
-            }
-          }
-          &--track-progress {
-            &__icon {
-              background-size: 120px 120px!important;
-            }
-            &:hover {
-              & .board__item__icon {
-                transform: rotate(360deg);
-                transition: top 0.4s, transform 0.4s;
-              }
-            }
-          }
-          &--take-action,
-          &--environmental-contribution {
-            &:hover {
-              & .board__item__icon {
-                top: -10px;
-                transition: top 0.4s;
-              }
-            }
-          }
-          &__icon {
-            transform: none;
-            position: relative;
-            top: 0px;
-            transition: top 0.4s, transform 0.4s;
-            margin-left: auto;
-            margin-right: auto;
-            height: 100px;
-            width: 100px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: invert(91%) sepia(5%) saturate(3522%) hue-rotate(85deg) brightness(85%) contrast(71%);
-            width: 80px;
-          }
-          &__title {
-            width: 100%;
-            margin-top: 0;
-            cursor: default;
-            text-align: center;
-            color: #40576d;
-              font-size: 1em;
-          }
-          &--raise-awareness {
-            &__icon {
-              background-image: url("Media/self-awareness.png");
-            }
-          }
-          &--informed-decisions {
-            &__icon {
-              background-image: url("Media/decision-making.png");
-            }
-          }
-          &--track-progress {
-            &__icon {
-              background-image: url("Media/track.png");
-            }
-          }
-          &--compare-footprints {
-            &__icon {
-              background-image: url("Media/benchmarking.png");
-            }
-          }
-          &--take-action {
-            &__icon {
-              background-image: url("Media/actionable.png");
-            }
-          }
-          &--environmental-contribution {
-            &__icon {
-              background-image: url("Media/sustainable.png");
-            }
-          }
-        }
-      }
     }
+
     & .separator {
       background-color: #69be94;
       max-width: none;
@@ -371,81 +55,9 @@
         background-repeat: no-repeat;
         background-position: center;
       }
-      & .facts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        color: #40576d;
-        @include facts-collapse {
-          display: block;
-        }
-        &__item {
-          text-align: center;
-          max-width: 40%;
-          padding: 20px;
-          @include facts-collapse {
-            padding-top: 0;
-            padding-bottom: 0;
-            max-width: 100%;
-          }
-        }
-      }
-      & .calculator__links {
-        padding: 20px;
-        &--title {
-          margin: 0;
-          padding-left: 50px;
-          padding-right: 50px;
-          color: #40576d;
-        }
-      }
     }
   }
-  footer {
-    border-top: 1px solid black;
-    width: 100%;
-    background-color: white;
-    & .foot {
-      max-width: 1136px;
-      font-size: 0.7em;
-      display: flex;
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 20px;
-      &__section {
-        &__title {
-          color: #40576d;
-          margin: 0;
-          padding: 20px;
-          @include header-collapse {
-            padding: 5px;
-          }
-        }
-        &__content {
-          max-width: 300px;
-          display: flex;
-          flex-wrap: wrap;
-          &__link {
-            height: 30px;
-            flex: 1 1 100px;
-            margin: 0;
-            padding: 0 20px;
-            @include header-collapse {
-              padding: 0 5px;
-            }
-            & a {
-              color: #40576d;
-              text-decoration: none!important;
-              &:hover {
-                color: #69be94;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+
   .navigators {
     display: flex;
     flex-wrap: wrap;
@@ -478,13 +90,6 @@
         &:hover {
           background-color: #40576d;
           color: white;
-        }
-      }
-      & a {
-        color: #40576d;
-        text-decoration: none!important;
-        &:hover {
-          color: #69be94;
         }
       }
     }

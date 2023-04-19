@@ -1,7 +1,7 @@
-import React from 'react';
-import { useState } from "react";
-import '../App.scss';
+import react, { useState } from 'react';
 import axios from 'axios';
+import './Login.scss';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');

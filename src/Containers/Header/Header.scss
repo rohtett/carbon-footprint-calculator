@@ -1,0 +1,105 @@
+@mixin header-collapse {
+  @media screen and (max-width: 484px) {
+    @content;
+  }
+}
+
+@mixin nav-collapse {
+  @media screen and (max-width: 525px) {
+    @content;
+  }
+}
+
+header {
+  height: 90px;
+  border-bottom: 1px solid #40576d;
+  position: sticky;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  & .head {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1136px;
+    margin-left: auto;
+    margin-right: auto;
+    & > a {
+      text-decoration: none;
+      display: flex;
+      & .logo {
+        height: 90px;
+        width: 90px;
+        background-image: url("../../../public/logo.svg");
+        background-position: center;
+        background-size: 80px 80px;
+      }
+      & h1 {
+        color: #40576d;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        @include header-collapse {
+          padding-left: 10px;
+          font-size: 1.5em;
+          margin: 0;
+          max-width: 250px;
+        }
+      }
+    }
+    & nav {
+      display: flex;
+      align-items: center;
+      & .desktop {
+        &__signin {
+          display: flex;
+          align-items: center;
+          @include nav-collapse {
+            display: none!important;
+          }
+          & a {
+            transition: color 0.4s;
+            color: #40576d;
+            text-decoration: none;
+            padding: 10px;
+            &:hover {
+              color: #69be94;
+            }
+          }
+          div {
+            padding: 5px 10px;
+          }
+        }
+        &__signed {
+
+        }
+      }
+      & .hamburger {
+        display: none;
+        @include nav-collapse {
+          display: flex;
+          &--icon {
+            display: flex;
+            align-items: center;
+            transform: scaleX(-100%);
+            cursor: pointer;
+            padding: 10px;
+            & svg {
+              height: 45px;
+              width: 45px;
+            }
+          }
+          &--menu {
+            &__signin {
+
+            }
+            &__signed {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

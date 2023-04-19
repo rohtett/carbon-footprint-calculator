@@ -1,0 +1,25 @@
+@mixin facts-collapse {
+  @media screen and (max-width: 936px) {
+    @content;
+  }
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #40576d;
+  @include facts-collapse {
+    display: block;
+  }
+  &__item {
+    text-align: center;
+    max-width: 40%;
+    padding: 20px;
+    @include facts-collapse {
+      padding-top: 0;
+      padding-bottom: 0;
+      max-width: 100%;
+    }
+  }
+}

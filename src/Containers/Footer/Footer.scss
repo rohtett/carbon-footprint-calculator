@@ -1,0 +1,51 @@
+@mixin footer-collapse {
+  @media screen and (max-width: 484px) {
+    @content;
+  }
+}
+
+footer {
+  border-top: 1px solid #40576d;
+  width: 100%;
+  background-color: white;
+  & .foot {
+    max-width: 1136px;
+    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    &__section {
+      &__title {
+        color: #40576d;
+        margin: 0;
+        padding: 20px;
+        @include footer-collapse {
+          padding: 5px;
+        }
+      }
+      &__content {
+        max-width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        &__link {
+          height: 30px;
+          flex: 1 1 100px;
+          margin: 0;
+          padding: 0 20px;
+          @include footer-collapse {
+            padding: 0 5px;
+          }
+          & a {
+            color: #40576d;
+            text-decoration: none!important;
+            &:hover {
+              color: #69be94;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
-import '../App.scss';
+import React, {useState}  from 'react';
 import axios from 'axios';
+import './Signup.scss';
 
 
 const Signup = () => {
@@ -63,6 +62,7 @@ const Signup = () => {
               type="email"
               name="email"
               id="email"
+              autoComplete="username"
               value={email}
                 onChange={(e) => {
                   setEmail(e.target.value)
@@ -87,6 +87,7 @@ const Signup = () => {
               type="password"
               name="password"
               id="password"
+              autoComplete="new-password"
               value={password}
                   onChange={(e) => {
                     setPassword(e.target.value)
@@ -111,6 +112,7 @@ const Signup = () => {
               type="password"
               name="confirm-password"
               id="confirm-password"
+              autoComplete="new-password"
               value={confirmPassword}
                   onChange={(e) => {
                     setConfirmPassword(e.target.value)
