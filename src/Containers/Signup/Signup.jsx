@@ -1,4 +1,5 @@
-import React, {useState}  from 'react';
+import React, { useState }  from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Signup.scss';
 
@@ -137,6 +138,7 @@ const Signup = () => {
           >
             Sign Up
           </button>
+            <p>Already have an account? <Link to="/login">Log in instead</Link></p>
           <div className="oAuth">
             <h3>Sign In With</h3>
             <div className=" oAuth__button oAuth__button--google" />

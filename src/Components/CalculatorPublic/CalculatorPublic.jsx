@@ -7,13 +7,36 @@ const CalculatorPublic = () => {
 
   }
 
+  const [domestic, setDomestic] = useState(false);
   const [transit, setTransit] = useState("ClassicBus");
+  const [psuedotransit, psuedosetTransit] = useState("Bus");
   const [distance, setDistance] = useState(0);
 
   return (
     <div className="calculators--form">
-      <h1>Calculator Public</h1>
-      <form className="calculators--form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+
+      <div className="calculators--form__item">
+        <select
+          className="calculators--form__item--input"
+          name="transit"
+          id="transit"
+          onChange={(e) => {
+            psuedosetTransit(e.target.value)
+          }}
+        >
+          <option value="Bus">Bus</option>
+          <option value="Rail">Rail</option>
+          <option value="Ferry">Ferry</option>
+        </select>
+
+        <label
+          className="calculators--form__item--label"
+          htmlFor="name"
+        >
+          Transit Type
+        </label>
+      </div>
 
         <div className="calculators--form__item">
           <select
@@ -24,31 +47,50 @@ const CalculatorPublic = () => {
               setTransit(e.target.value)
             }}
           >
-            <option value="ClassicBus">Classic Bus</option>
-            <option value="EcoBus">Eco Bus</option>
-            <option value="Coach">Coach</option>
-            <option value="NationalTrain">National Train</option>
-            <option value="LightRail">Light Rail/Tram</option>
-            <option value="Subway">Subway/Underground</option>
-            <option value="FerryOnFoot">Ferry (on Foot)</option>
-            <option value="FerryInCar">Ferry (in Car)</option>
+          {
+            psuedotransit == "Bus" && (
+              <>
+                <option value="ClassicBus">Classic Bus</option>
+                <option value="EcoBus">Eco Bus</option>
+                <option value="Coach">Coach</option>
+              </>
+            )
+          }
+          {
+            psuedotransit == "Rail" && (
+              <>
+              <option value="NationalTrain">National Train</option>
+              <option value="LightRail">Light Rail/Tram</option>
+              <option value="Subway">Subway/Underground</option>
+              </>
+            )
+          }
+          {
+            psuedotransit=="Ferry" && (
+              <>
+              <option value="FerryOnFoot">Ferry (on Foot)</option>
+              <option value="FerryInCar">Ferry (in Car)</option>
+              </>
+            )
+          }
           </select>
 
           <label
-            className="calculators--form__item--label"
+            className="calculators--form__item--label calculators--form__item--drop--label"
             htmlFor="name"
           >
             Transit Type
           </label>
         </div>
 
-        <div className="calculators--form__item">
-          <input type="number" min="0"
+
+        <div className="calculators--form__item calculators--form__item--insert">
+          <input className="calculators--form__item--input calculators--form__item--insert--input" type="number" min="0"
             onChange={(e) => {
               setDistance(e.target.value);
             }}
           />
-          <label htmlFor="distance">
+          <label className="calculators--form__item--label calculators--form__item--insert--label" htmlFor="distance">
             Distance
           </label>
         </div>
@@ -59,7 +101,6 @@ const CalculatorPublic = () => {
           Calculate
         </button>
       </form>
-      Query: { transit }
     </div>
   )
 }

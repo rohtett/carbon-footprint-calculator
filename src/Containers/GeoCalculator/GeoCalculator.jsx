@@ -21,29 +21,30 @@ function GeoCalculator() {
     <div className='container'>
       <div className='separator'>
         <div className="calculators">
+          <div className="calculators--menu">
+            <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
+              classes = "calculators--menu__item--car"
+              ids = "car"
+              title = "Car"
+            />
+            <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
+              classes = "calculators--menu__item--public"
+              ids = "public"
+              title = "Public Transport"
+            />
+            <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
+              classes = "calculators--menu__item--plane"
+              ids = "plane"
+              title = "Plane"
+            />
+          </div>
           { calculator === 'car' && <CalculatorCar /> }
           { calculator === 'public' && <CalculatorPublic /> }
           { calculator === 'plane' && <CalculatorPlane /> }
         </div>
       </div>
       <div className='banner'>
-        <div className="calculators--menu">
-          <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
-            classes = "calculators--menu__item--car"
-            ids = "car"
-            title = "Car"
-          />
-          <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
-            classes = "calculators--menu__item--public"
-            ids = "public"
-            title = "Public Transport"
-          />
-          <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
-            classes = "calculators--menu__item--plane"
-            ids = "plane"
-            title = "Plane"
-          />
-        </div>
+
       </div>
     </div>
   )

@@ -22,12 +22,11 @@ const CalculatorPlane = () => {
 
   return (
     <div className="calculators--form">
-      <h1>Calculator Plane</h1>
-      <form className="calculators--form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
 
-        <div className="calculators--form__item">
+        <div className="calculators--form__item calculators__form__item--drop">
           <select
-            className="calculators--form__item--input"
+            className="calculators--form__item--input calculators__form__item--drop--input"
             name="class"
             id="class"
             onChange={(e) => {
@@ -41,34 +40,38 @@ const CalculatorPlane = () => {
           </select>
 
           <label
-            className="calculators--form__item--label"
+            className="calculators--form__item--label calculators__form__item--drop--label"
             htmlFor="name"
           >
             Class
           </label>
         </div>
 
-        <div className="calculators--form__item">
-          <input type="number" min="0"
+        <div className="calculators--form__item calculators__form__item--insert">
+          <input className="calculators--form__item--input calculators--form__item--insert--input" type="number" min="0"
             onChange={(e) => {
               setDistance(e.target.value);
+              if (e.target.value) {
+                e.target.classList.add("calculators--form__item--input--contains");
+              } else {
+                e.target.classList.remove("calculators--form__item--input--contains")
+              }
             }}
           />
-          <label htmlFor="distance">
+          <label className="calculators--form__item--label calculators--form__item--insert--label" htmlFor="distance">
             Distance
           </label>
         </div>
 
-        <div className="calculators--form__item">
-          <input type="range" min="0" max="1" value={psuedoflightlength}
+        <div className="calculators--form__item calculators--form__item--slider">
+          <span>{ flightlength }</span>
+          <input className="calculators--form__item--input calculators__form__item--slider--input" id="length" type="range" min="0" max="1" value={psuedoflightlength}
             onChange={(e) => {
               psuedosetflightLength(e.target.value);
             }}
           />
-        </div>
+          <label className="calculators--form__item--label calculators__form__item--slider--label" htmlFor="length">Flight Length</label>
 
-        <div className="calculators--form__item">
-          { flightlength }
         </div>
 
         <button
@@ -78,7 +81,6 @@ const CalculatorPlane = () => {
           Calculate
         </button>
       </form>
-      Query: { flightclass }
     </div>
   )
 }

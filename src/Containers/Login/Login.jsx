@@ -1,4 +1,5 @@
 import react, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.scss';
 
@@ -60,6 +61,7 @@ const Login = () => {
           <label className="login__form__item--label" htmlFor="password">Password</label>
         </div>
           <button className="login__form__button" type="submit">Log In</button>
+          <p>Don't have an account? <Link to="/login">Sign up instead</Link></p>
           <div className="oAuth">
             <h3>Sign In With</h3>
             <div className=" oAuth__button oAuth__button--google" />

@@ -53,6 +53,16 @@
       }
     }
   }
+  & p {
+    text-align: center;
+    font-size: 0.9em;
+    & a {
+      color: #69be94;
+      &:hover {
+        color: #40576d;
+      }
+    }
+  }
     &__item {
       border: 1px solid #40576d;
       position: relative;
