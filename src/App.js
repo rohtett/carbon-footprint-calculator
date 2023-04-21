@@ -1,6 +1,7 @@
 import './App.scss';
+import react from 'react';
 import { Header, Footer, Home, GeoCalculator, Login, Signup } from './Containers';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link} from 'react-router-dom';
 
 function App() {
 

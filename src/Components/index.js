@@ -4,3 +4,4 @@ export { default as CalculatorCar } from './CalculatorCar/CalculatorCar';
 export { default as CalculatorPublic } from './CalculatorPublic/CalculatorPublic';
 export { default as CalculatorPlane } from './CalculatorPlane/CalculatorPlane';
 export { default as CalculatorInput } from './CalculatorInput/CalculatorInput';
+export { default as ScrollTop } from './ScrollTop';

@@ -90,7 +90,7 @@ const CalculatorCar = () => {
               psuedosetSize(e.target.value);
             }}
           />
-          <label for="size" className = "calculators--form__item--slider--label calculators--form__item--label">Size</label>
+          <label htmlFor="size" className = "calculators--form__item--slider--label calculators--form__item--label">Size</label>
         </div>
 
         <div className="calculators--form__item calculators--form__item--insert">

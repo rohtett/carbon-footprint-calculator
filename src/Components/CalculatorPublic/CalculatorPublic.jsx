@@ -4,10 +4,9 @@ import './CalculatorPublic.scss';
 const CalculatorPublic = () => {
 
   const handleSubmit = () => {
-
+    //
   }
 
-  const [domestic, setDomestic] = useState(false);
   const [transit, setTransit] = useState("ClassicBus");
   const [psuedotransit, psuedosetTransit] = useState("Bus");
   const [distance, setDistance] = useState(0);
