@@ -1,0 +1,102 @@
+@mixin nav-collapse {
+  @media screen and (max-width: 1136px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 602px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 380px) {
+    @content;
+  }
+}
+
+.head__hamburger {
+  display: none;
+  position: relative;
+  &__icon {
+    padding: 0 10px;
+    height: 100%;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    background-position: center;
+    transform: scale(-1);
+    background-image: url(data:image/svg+xml,%3Csvg%20stroke%3D%22currentColor%22%20fill%3D%22currentColor%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%2024%2024%22%20aria-hidden%3D%22true%22%20height%3D%221em%22%20width%3D%221em%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M3%206.75A.75.75%200%20013.75%206h16.5a.75.75%200%20010%201.5H3.75A.75.75%200%20013%206.75zM3%2012a.75.75%200%2001.75-.75H12a.75.75%200%20010%201.5H3.75A.75.75%200%20013%2012zm0%205.25a.75.75%200%2001.75-.75h16.5a.75.75%200%20010%201.5H3.75a.75.75%200%2001-.75-.75z%22%20clip-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+    filter: invert(32%) sepia(16%) saturate(969%) hue-rotate(168deg) brightness(93%) contrast(88%);
+    @include mobile {
+      width: 40px;
+      background-size: 40px 40px;
+    }
+  }
+  &__menu {
+    position: absolute;
+    right: 0px;
+    margin: 20px;
+    background-color: white;
+    min-width: 260px;
+    text-align: right;
+    border-radius: 15px;
+    height: 0px;
+    transition: color 0.4s, height 0.4s 0.4s, box-shadow 0.4s 0.4s;
+    overflow-y: hidden;
+    color: white;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    & > div {
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    & .head--login > div {
+      box-sizing: border-box;
+      width: 260px;
+    }
+    &--open {
+      height: 250px;
+      transition: height 0.4s, color 0.4s 0.4s, box-shadow 0.4s;
+      color: #40576d;
+      box-shadow: 0px 0px 20px 7px rgba(64,87,109,1);
+      -webkit-box-shadow: 0px 0px 20px 7px rgba(64,87,109,1);
+      -moz-box-shadow: 0px 0px 20px 7px rgba(64,87,109,1);
+
+      & > div {
+        opacity: 1;
+        transition: opacity 0.4s 0.4s;
+      }
+    }
+    & ul {
+      list-style-type: none;
+    }
+    &--link {
+      margin-left: auto;
+      padding: 0 20px!important;
+      width: 85px;
+    }
+    & .head--login {
+      .head__menu--link {
+        padding: 0 20px;
+      }
+      align-items: flex-end;
+      flex-direction: column;
+    }
+    & .head--loggedin,
+    & .head--login {
+      display: none;
+      @include tablet {
+        display: flex!important;
+      }
+    }
+    & .head--loggedin {
+      justify-content: flex-end;
+    }
+  }
+  @include nav-collapse {
+    display: block;
+  }
+}

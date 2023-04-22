@@ -47,7 +47,6 @@ const CalculatorCar = () => {
             <input type="radio" name="type" id="bike"
               onChange = {(e) => {
                 setVehicle("MotorBike")
-                setFuel("")
               }}
               checked = { vehicle === "MotorBike" }
             />

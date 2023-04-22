@@ -18,6 +18,9 @@ const Footer = () => {
             <p className="foot__section__content__link">
               <Link to="/leagues">Leagues</Link>
             </p>
+            <p className="foot__section__content__link">
+              <Link to="/faq">FAQ</Link>
+            </p>
           </div>
         </div>
         <div className="foot__section">

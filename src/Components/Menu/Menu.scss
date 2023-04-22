@@ -1,0 +1,22 @@
+@mixin nav-collapse {
+  @media screen and (max-width: 1136px) {
+    @content;
+  }
+}
+
+.head__menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  &--link {
+    padding: 20px;
+    transition: color 0.4s;
+    &:hover {
+      transition: color 0.4s;
+      color: #69be94;
+    }
+  }
+  @include nav-collapse {
+    display: none;
+  }
+}

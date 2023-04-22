@@ -17,11 +17,11 @@ const CalculatorInput = ( { calculator, setCalculator, classes, title, ids  } ) 
       <label htmlFor={ classes }>
         <div>
           <div className={ classes + "__icon calculators--menu__item__icon" } />
-          <div className={ classes + "__title calculators--menu__item__title" }>
-            { title }
-          </div>
         </div>
       </label>
+      <div className={ classes + "__title calculators--menu__item__title" }>
+        { title }
+      </div>
     </div>
   )
 }
