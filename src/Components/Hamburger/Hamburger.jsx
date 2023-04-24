@@ -4,7 +4,7 @@ import { HiBars3CenterLeft } from 'react-icons/hi2';
 import { SignMenu } from '../';
 import './Hamburger.scss';
 
-const Hamburger = ({ signState }) => {
+const Hamburger = ({ isLoggedIn }) => {
 
   const handleClick = e => {
     const hamburger = document.querySelector(".head__hamburger__icon");
@@ -32,7 +32,7 @@ const Hamburger = ({ signState }) => {
         setMenu(!menu)
       }}/>
       <div className={menu? "head__hamburger__menu head__hamburger__menu--open": "head__hamburger__menu"}>
-        { signState && <SignMenu signState = { signState } /> }
+        { isLoggedIn && <SignMenu isLoggedIn = { isLoggedIn } /> }
         <ul>
           <Link to="/calculate">
             <li className= "head__hamburger__menu--link head__menu--link">
@@ -55,7 +55,7 @@ const Hamburger = ({ signState }) => {
             </li>
           </Link>
         </ul>
-        { !signState && <SignMenu signState = { signState } /> }
+        { !isLoggedIn && <SignMenu isLoggedIn = { isLoggedIn } /> }
       </div>
     </div>
   )

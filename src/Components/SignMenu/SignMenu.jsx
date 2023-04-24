@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import { BsPersonCircle } from 'react-icons/bs';
 import './SignMenu.scss';
 
-const SignMenu = ({ signState }) => {
+const SignMenu = ({ isLoggedIn }) => {
 
-  return signState? (
+  return isLoggedIn()? (
       <Link to="/account" className="head--loggedin">
-        { signState.name }
+        name
         <div className="head--loggedin__icon" />
         <BsPersonCircle />
       </Link>

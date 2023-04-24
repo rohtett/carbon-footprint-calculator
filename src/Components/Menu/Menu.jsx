@@ -2,7 +2,7 @@ import './Menu.scss';
 import { Link } from 'react-router-dom';
 import { Hamburger, SignMenu } from '../';
 
-const Menu = ({ setSignState, signState }) => {
+const Menu = ({ isLoggedIn }) => {
 
   return (
     <ul className="head__menu">

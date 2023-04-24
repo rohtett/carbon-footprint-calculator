@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header isLoggedIn= {isLoggedIn} />
       <div className="wrapper">
         <Routes>
           <Route path = "/" element= { <Home /> } key = { document.location.href } />
