@@ -87,6 +87,11 @@ const CalculatorPublic = () => {
           <input className="calculators--form__item--input calculators--form__item--insert--input" type="number" min="0"
             onChange={(e) => {
               setDistance(e.target.value);
+              if (e.target.value) {
+                e.target.classList.add("calculators--form__item--input--contains");
+              } else {
+                e.target.classList.remove("calculators--form__item--input--contains")
+              }
             }}
           />
           <label className="calculators--form__item--label calculators--form__item--insert--label" htmlFor="distance">

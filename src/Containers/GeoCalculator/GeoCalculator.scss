@@ -1,3 +1,9 @@
+@mixin input-collapse {
+  @media screen and (max-width: 412px) {
+    @content;
+  }
+}
+
 .container {
   .separator {
     .calculators {
@@ -6,10 +12,33 @@
       display: flex;
       border-radius: 10px;
       max-width: 700px;
+      @include input-collapse {
+        display: block;
+      }
+      &--menu {
+        @include input-collapse {
+          display: flex;
+          margin: 10px;
+          position: relative;
+          top: 20px;
+        }
+        &__item {
+          @include input-collapse {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            width: 33%;
+          }
+        }
+      }
       &--form {
         width: 100%;
         padding: 40px;
         padding: 20px;
+        @include input-collapse {
+          box-sizing: border-box;
+        }
         & form {
           justify-content: flex-start;
           height: 100%;
@@ -102,8 +131,5 @@
         }
       }
     }
-  }
-  .banner {
-    width: 100%;
   }
 }

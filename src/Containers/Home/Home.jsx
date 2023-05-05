@@ -1,5 +1,4 @@
-import { Facts, Links } from '../../Components';
-import { Badges } from '../../Containers';
+import { About, Links } from '../../Components';
 import './Home.scss';
 
 const Home = () => {
@@ -7,11 +6,8 @@ const Home = () => {
   return (
     <div className="container">
       <div className="separator">
-        <Facts />
+        <About />
         <Links />
-      </div>
-      <div className="banner">
-        <Badges />
       </div>
     </div>
   )

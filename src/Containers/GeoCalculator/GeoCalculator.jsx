@@ -43,9 +43,6 @@ function GeoCalculator() {
           { calculator === 'plane' && <CalculatorPlane /> }
         </div>
       </div>
-      <div className='banner'>
-
-      </div>
     </div>
   )
 }

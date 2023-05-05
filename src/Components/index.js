@@ -1,5 +1,4 @@
 export { default as Links } from './Links/Links';
-export { default as Facts } from './Facts/Facts';
 export { default as CalculatorCar } from './CalculatorCar/CalculatorCar';
 export { default as CalculatorPublic } from './CalculatorPublic/CalculatorPublic';
 export { default as CalculatorPlane } from './CalculatorPlane/CalculatorPlane';
@@ -8,3 +7,4 @@ export { default as ScrollTop } from './ScrollTop';
 export { default as Menu } from './Menu/Menu';
 export { default as SignMenu } from './SignMenu/SignMenu';
 export { default as Hamburger } from './Hamburger/Hamburger';
+export { default as About } from './About/About';

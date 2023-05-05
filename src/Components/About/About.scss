@@ -1,0 +1,115 @@
+@mixin badge-collapse {
+  @media screen and (max-width: 1055px) {
+    @content;
+  }
+}
+@mixin badge-collapse-2 {
+  @media screen and (max-width: 645px) {
+    @content;
+  }
+}
+
+.about {
+  padding: 0 50px;
+  &__badges {
+    height: 100%;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__item {
+      box-sizing: border-box;
+      width: 180px;
+      color: #69be94;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 120px;
+      flex: 1 1 120px;
+      &--raise-awareness,
+      &--informed-decisions,
+      &--compare-footprints {
+        &:hover {
+            & .about__badges__item__icon {
+            transform: scaleX(-1);
+            transition: top 0.4s, transform 0.4s;
+          }
+        }
+      }
+      &--track-progress {
+        &__icon {
+          background-size: 120px 120px!important;
+        }
+        &:hover {
+            & .about__badges__item__icon {
+            transform: rotate(360deg);
+            transition: top 0.4s, transform 0.4s;
+          }
+        }
+      }
+      &--take-action,
+      &--environmental-contribution {
+        &:hover {
+            & .about__badges__item__icon {
+            top: -10px;
+            transition: top 0.4s;
+          }
+        }
+      }
+      &__icon {
+        transform: none;
+        position: relative;
+        top: 0px;
+        transition: top 0.4s, transform 0.4s;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        width: 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: invert(100%);
+        width: 80px;
+      }
+      &__title {
+        width: 100%;
+        margin-top: 0;
+        cursor: default;
+        text-align: center;
+        color: #40576d;
+          font-size: 1em;
+      }
+      &--raise-awareness {
+        &__icon {
+          background-image: url("../../Media/self-awareness.png");
+        }
+      }
+      &--informed-decisions {
+        &__icon {
+          background-image: url("../../Media/decision-making.png");
+        }
+      }
+      &--track-progress {
+        &__icon {
+          background-image: url("../../Media/track.png");
+        }
+      }
+      &--compare-footprints {
+        &__icon {
+          background-image: url("../../Media/benchmarking.png");
+        }
+      }
+      &--take-action {
+        &__icon {
+          background-image: url("../../Media/actionable.png");
+        }
+      }
+      &--environmental-contribution {
+        &__icon {
+          background-image: url("../../Media//sustainable.png");
+        }
+      }
+    }
+  }
+}
