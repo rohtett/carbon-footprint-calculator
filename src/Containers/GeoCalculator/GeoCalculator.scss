@@ -85,6 +85,9 @@
             }
           }
           &--label {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
             cursor: default!important;
             top: 2px;
             left: 5px;
@@ -112,6 +115,14 @@
               top: 12px;
               left: 10px;
               transition: top 0.4s, left 0.4s, font-size 0.4s;
+            }
+            &--input::-webkit-outer-spin-button,
+            &--input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            & input[type=number] {
+              -moz-appearance: textfield;
             }
           }
         }

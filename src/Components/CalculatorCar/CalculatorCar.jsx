@@ -1,13 +1,35 @@
-import react, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Distance, EngineSize } from '../';
 import './CalculatorCar.scss';
 
-const CalculatorCar = () => {
+const CalculatorCar = ({Payload}) => {
 
   const [vehicle, setVehicle] = useState("Car");
   const [fuel, setFuel] = useState("Petrol");
+  const [units, setUnits] = useState(sessionStorage.getItem("units") || "km");
   const [psuedosize, psuedosetSize] = useState(0);
   const [size, setSize] = useState("Small");
   const [distance, setDistance] = useState(0);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const request = new Payload();
+    request.options.url = (vehicle==="MotorBike")?
+      'https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromCarTravel'
+      :'https://carbonfootprint1.p.rapidapi.com/CarbonFootprintFromMotorBike'
+    request.options.params = {
+      distance: (units==="miles")? String(distance*1.60934): String(distance),
+      type: (() => {
+        if (vehicle==="MotorBike") return size + vehicle
+        else {
+          return size + fuel + vehicle;
+        }
+      })()
+    }
+    //below, this will ping the actual API
+    //request.getPayload();
+    console.log(request.options)
+  }
 
   useEffect(() => {
     const getSize = () => {
@@ -17,10 +39,6 @@ const CalculatorCar = () => {
     }
     setSize(getSize)
   }, [psuedosize])
-
-  const handleSubmit = () => {
-    //
-  }
 
   return (
     <div className="calculators--form">
@@ -69,7 +87,9 @@ const CalculatorCar = () => {
           >
             <option value="Petrol">Petrol</option>
             <option value="Diesel">Diesel</option>
-            <option value="Hybrid">Hybrid</option>
+            { vehicle !== "Van" && (
+              <option value="Hybrid">Hybrid</option>
+            )}
             <option value="CNG">CNG</option>
             <option value="LPG">LPG</option>
           </select>
@@ -82,31 +102,10 @@ const CalculatorCar = () => {
           </label>
         </div>
 
-        <div className="calculators--form__item calculators--form__item--slider">
-          <span>{ size }</span>
-          <input id="size" className = "calculators--form__item--slider--input calculators--form__item--input" type="range" min="0" max="2" value={psuedosize}
-            onChange={(e) => {
-              psuedosetSize(e.target.value);
-            }}
-          />
-          <label htmlFor="size" className = "calculators--form__item--slider--label calculators--form__item--label">Size</label>
-        </div>
+        <EngineSize size = { size } setSize = { setSize } fuel = { fuel } vehicle = { vehicle } units = { units }  />
 
-        <div className="calculators--form__item calculators--form__item--insert">
-          <input className="calculators--form__item--input calculators--form__item--insert--input" type="number" min="0" id="distance"
-            onChange={(e) => {
-              setDistance(e.target.value);
-              if (e.target.value) {
-                e.target.classList.add("calculators--form__item--input--contains");
-              } else {
-                e.target.classList.remove("calculators--form__item--input--contains")
-              }
-            }}
-          />
-          <label className="calculators--form__item--label calculators--form__item--insert--label" htmlFor="distance">
-            Distance
-          </label>
-        </div>
+        <Distance setDistance = { setDistance } units = { units } setUnits = { setUnits } />
+
         <button
           className="calculators--form__button"
           type="submit"

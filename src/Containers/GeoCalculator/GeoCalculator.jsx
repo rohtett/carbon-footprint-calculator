@@ -1,4 +1,5 @@
-import react, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { CalculatorCar, CalculatorPublic, CalculatorPlane, CalculatorInput } from '../../Components';
 import './GeoCalculator.scss';
 
@@ -17,6 +18,26 @@ function GeoCalculator() {
     }
   }, [hash])
 
+  function Payload() {
+    this.options = {
+      method: 'GET',
+      params: {},
+      headers: {
+        'X-RapidAPI-Key': '',
+        'X-RapidAPI-Host': 'carbonfootprint1.p.rapidapi.com'
+      }
+    }
+    this.getPayload = async() => {
+      try {
+        const response = await axios.request(this.options);
+        console.log(response.data);
+      }
+      catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
   return (
     <div className='container'>
       <div className='separator'>
@@ -24,23 +45,23 @@ function GeoCalculator() {
           <div className="calculators--menu">
             <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
               classes = "calculators--menu__item--car"
-              ids = "car"
+              ids = "CarTravel"
               title = "Car"
             />
             <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
               classes = "calculators--menu__item--public"
-              ids = "public"
+              ids = "PublicTransit"
               title = "Public Transport"
             />
             <CalculatorInput setCalculator = { setCalculator } calculator = { calculator }
               classes = "calculators--menu__item--plane"
-              ids = "plane"
+              ids = "Flight"
               title = "Plane"
             />
           </div>
-          { calculator === 'car' && <CalculatorCar /> }
-          { calculator === 'public' && <CalculatorPublic /> }
-          { calculator === 'plane' && <CalculatorPlane /> }
+          { calculator === 'CarTravel' && <CalculatorCar Payload = { Payload } /> }
+          { calculator === 'PublicTransit' && <CalculatorPublic Payload = { Payload } /> }
+          { calculator === 'Flight' && <CalculatorPlane Payload = { Payload } /> }
         </div>
       </div>
     </div>

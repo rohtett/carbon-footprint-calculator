@@ -8,3 +8,5 @@ export { default as Menu } from './Menu/Menu';
 export { default as SignMenu } from './SignMenu/SignMenu';
 export { default as Hamburger } from './Hamburger/Hamburger';
 export { default as About } from './About/About';
+export { default as Distance } from './Distance/Distance';
+export { default as EngineSize } from './EngineSize/EngineSize';

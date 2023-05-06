@@ -1,0 +1,39 @@
+.calculators__form__item--insert {
+  position: relative;
+  &__toggle {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    height: 20px;
+    width: 60px;
+    &--unit {
+      display: flex;
+      align-items: center;
+      height: inherit;
+      padding: 0 5px;
+      &--input {
+        display: none;
+        &:checked + label {
+          color: #40576d;
+        }
+      }
+      &--label {
+        color: buttonface;
+        cursor: pointer;
+        transition: color 0.2s;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+        &:hover {
+          color: black!important;
+          transition: color 0.2s;
+        }
+      }
+      &:nth-child(1) {
+        border-right: 1.5px solid #40576d;
+      }
+    }
+  }
+
+}
